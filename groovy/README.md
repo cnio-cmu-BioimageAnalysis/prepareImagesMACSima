@@ -1,6 +1,6 @@
 # prepareImagesMACSima
 
-This groovy script extracts, renames and merges the images corresponding to the MACSima capture cycles. Specifically, for each ROI it renames the images of the different channels with the name of the corresponding marker and joins them into a single merged image.
+This groovy script extracts, renames and merges the images corresponding to the MACSima capture cycles. Specifically, for each ROI it renames the images of the different channels with the name of the corresponding marker and joins them into a single merged TIFF image.
 
 ## Download prepareImagesMACSima code
 1. Go to the GitHub repository `prepareImagesMACSima`
@@ -40,7 +40,7 @@ This groovy script extracts, renames and merges the images corresponding to the 
     </p>
 
 5. In this new window, click on `File>Open...` and navigate to the Downloads folder where you have saved the repo. Once in the repo location, click on the `prepareImagesMACSima.groovy` and open it.
- - IMPORTANT: Repos usually have a typical folder hierarchy. Therefore, to get to the `prepareImagesMACSima` script, you will probably have to navigate to `migrationAnalysis_ > groovy > src > main > prepareImagesMACSima`
+ - IMPORTANT: Repos usually have a typical folder hierarchy. Therefore, to get to the `prepareImagesMACSima.groovy` script, you will probably have to navigate to `prepareImagesMACSima > groovy > src > main > prepareImagesMACSima.groovy`
 <p align="center">
     <img width="500" height="350" src="images/scriptOpen.png">
     </p>
@@ -83,12 +83,12 @@ This groovy script extracts, renames and merges the images corresponding to the 
 **CAUTION**: If you wish to do your analysis on VisioPharm (it does not affect visualization in QuPath or Fiji ), we aware that you follow the next steps in order to mantain the names of your channels and image resolution.
 Open the .tif images saved after running the `prepareImagesMACSima` script and convert to ome.tif files with QuPath.
 1. Open the QuPath application
-2. Create a project for your .tif images resulted after running the `prepareImagesMACSima`. To achive this click on `Create project` and select an empty folder where you want to save the qupath project.
+2. Create a project for your .tif images resulted after running the `prepareImagesMACSima.groovy` script. To achive this click on `Create project` and select an empty folder where you want to save the qupath project.
 <p align="center">
     <img width="600" height="350" src="images/qupath_project.png">
     </p>
 
-3. With your just created QuPath project, drag your .tif images saved after running the `prepareImagesMACSima` to it.
+3. With your just created QuPath project, drag your .tif images saved after running the `prepareImagesMACSima.groovy` script to it.
 <p align="center">
     <img width="600" height="350" src="images/qupath_tif.png">
     </p>
@@ -98,7 +98,7 @@ Open the .tif images saved after running the `prepareImagesMACSima` script and c
     <img width="600" height="200" src="images/qupath_scripteditor.png">
     </p>
 
-5. Open the file `fromTiffToOmeTiff.groovy` with a text editor app (ex: sublime, bloc de notas) and copy the code
+5. Open the file `fromTiffToOmeTiff.groovy` (you should propably have to navigate to `prepareImagesMACSima > groovy > src > main > fromTiffToOmeTiff.groovy`) with a text editor app (ex: sublime, bloc de notas) and copy the code
 6. Paste it on the `</> Script editor` window
 <p align="center">
     <img width="300" height="200" src="images/qupath_code.png">
