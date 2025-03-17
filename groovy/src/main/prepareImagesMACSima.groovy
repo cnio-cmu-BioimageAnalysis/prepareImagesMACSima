@@ -19,7 +19,6 @@ import ij.plugin.RGBStackMerge
 #@File(label = "Input File Directory", style = "directory") inputDir
 #@File(label = "Output File Directory", style = "directory") outputDir
 
-
 IJ.log("-Parameters selected: ")
 IJ.log("    -input Directory: " + inputDir)
 IJ.log("    -output Directory: " + outputDir)
@@ -78,14 +77,16 @@ for (def h = 0; h < listofFiles0.length; h++) {
                                 def startPrefix = "A-"
                                 def startIndex = trimmedFileName.indexOf(startPrefix) + startPrefix.length()
                                 def endIndex = trimmedFileName.indexOf("_C-", startIndex)
-
-                                def trimmedName = trimmedFileName.substring(startIndex, endIndex)
-                                //def trimmedName = rawName.split("-")[1]
-
-                                imp.setTitle(trimmedName)
-                                if (trimmedName) {
+                                if (endIndex == -1) {
+                                    def lastDashIndex = fileName.lastIndexOf('-') // Obain last "-"
+                                    def trimmedName = fileName.substring(lastDashIndex + 1)
+                                    // Obtain everything after the last "-"
+                                    imp.setTitle(trimmedName.replaceAll(".tif", ""))
+                                } else {
+                                    def trimmedName = trimmedFileName.substring(startIndex, endIndex)
                                     imp.setTitle(trimmedName)
                                 }
+
                                 roi.add(imp)
                             }
                         }
