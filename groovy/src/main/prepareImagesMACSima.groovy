@@ -18,6 +18,8 @@ import ij.plugin.RGBStackMerge
 //
 #@File(label = "Input File Directory", style = "directory") inputDir
 #@File(label = "Output File Directory", style = "directory") outputDir
+//def inputDir = new File("\\\\imgserver.cnio.es\\IMAGES\\CONFOCAL\\MACSima\\HECG\\HECG_040225_CDH5_PANEL 1_250317_231749\\HECG_040225_CDH5_PANEL1_2025-02-04_11-54-59\\PreprocessedData")
+//def outputDir = new File("\\\\imgserver.cnio.es\\IMAGES\\CONFOCAL\\Optical Microscopy\\OUTMACSIMA\\HECG_040225_CDH5_PANEL 1_250317_231749")
 
 IJ.log("-Parameters selected: ")
 IJ.log("    -input Directory: " + inputDir)
@@ -96,7 +98,15 @@ for (def h = 0; h < listofFiles0.length; h++) {
                 imageArray = roi.toArray(imageArray);
                 def merge = RGBStackMerge.mergeChannels(imageArray, false)
                 merge.setCalibration(cal)
-                IJ.saveAsTiff(merge, outputDir.getAbsolutePath() + File.separator + listOfFiles2[j].getName())
+
+                def saveDir = outputDir.getAbsolutePath() + File.separator + listOfFiles2[j].getAbsolutePath().replace(inputDir.getAbsolutePath(), "")
+                def fileDir = new File(saveDir).getParentFile()
+                if (!fileDir.exists()) {
+                    fileDir.mkdirs()
+                }
+                IJ.saveAsTiff(merge, saveDir)
+
+                //IJ.saveAsTiff(merge, outputDir.getAbsolutePath() + File.separator + listOfFiles2[j].getAbsolutePath().replace(inputDir.getAbsolutePath(), ""))
                 //IJ.run(merge, "OME-TIFF...", "save=" + outputDir.getAbsolutePath() + File.separator + listOfFiles2[j].getName() + ".ome.tif" + " export compression=Uncompressed")
             }
         }
