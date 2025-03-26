@@ -87,6 +87,8 @@ Open the .tif images saved after running the `prepareImagesMACSima` script and c
 <p align="center">
     <img width="600" height="350" src="/groovy/images/qupath_project.png">
     </p>
+    
+**Note**: Be aware that QuPath does not let you to have multiples folders/subdirectories inside your project. Therefore, if your MACSima experiment has multiples racks->wells, you would have to create a QuPath project for each rack->wells (1 per project per folder where your .tif images are)
 
 3. With your just created QuPath project, drag your .tif images saved after running the `prepareImagesMACSima.groovy` script to it.
 <p align="center">
