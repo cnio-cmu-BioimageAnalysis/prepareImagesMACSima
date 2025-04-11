@@ -52,7 +52,7 @@ This groovy script extracts, renames and merges the images corresponding to the 
 
 7. Then a dialog will be displayed in order to set both the input directory path in which your images are ( This is where you make used of the shortcut created in step 1, navigate to `\\imgserver\IMAGES\CONFOCAL\MACSima` until your specific experiment. IMPORTANT: In the input directory path you must specify up to the folder `PreprocessedData`, otherwise the script will not work) and the output directory in which you want to save your final images (TIP: a folder named `1_OUTPUTS MACSIMA` has been created in the imgserver (`"\\imgserver\IMAGES\CONFOCAL\MACSima\1_OUTPUTS MACSIMA"`) where we recommend to save your final images under a folder named the same as your project. This will help the CMU to track the projects)
 <p align="center">
-    <img width="500" height="200" src="images/dialog.png">
+    <img width="500" height="200" src="/groovy/images/dialog.png">
     </p>
 
 8. Click on `Accept`. This will make the script to continue processing. A log window will appear to update about the processing status
