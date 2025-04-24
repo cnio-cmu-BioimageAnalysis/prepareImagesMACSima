@@ -44,6 +44,24 @@ This groovy script extracts, renames and merges the images corresponding to the 
 <p align="center">
     <img width="500" height="350" src="/groovy/images/scriptOpen.png">
     </p>
+    
+- **CAUTION! TO DO**: If your experiment includes empty cycles, you need to modify a line of code in the `prepareImagesMACSima` script you just downloaded. Go to line 61, where it says: `if (!listOfFiles3[k].getName().contains("Scan"))`. You should modify this line to also exclude your empty cycles.
+
+For example, if cycles 3 and 5 are empty in your experiment, the line should look like this:
+
+```java
+if (!listOfFiles3[k].getName().contains("Scan") &&
+    !listOfFiles3[k].getName().contains("Cycle3") &&
+    !listOfFiles3[k].getName().contains("Cycle5"))
+```
+
+So then, if you have empty cycles, copy the following line:
+```java
+if (!listOfFiles3[k].getName().contains("Scan") &&
+    !listOfFiles3[k].getName().contains("Cycle3") &&
+    !listOfFiles3[k].getName().contains("Cycle5"))
+```
+Then replace `"Cycle3"` and `"Cycle5"` with the specific empty cycles in your experiment.
 
 6. Press the `Run` button to compile the script
 <p align="center">
