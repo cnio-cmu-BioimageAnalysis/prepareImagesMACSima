@@ -18,8 +18,8 @@ import ij.plugin.RGBStackMerge
 //
 #@File(label = "Input File Directory", style = "directory") inputDir
 #@File(label = "Output File Directory", style = "directory") outputDir
-//def inputDir = new File("\\\\imgserver.cnio.es\\IMAGES\\CONFOCAL\\MACSima\\HECG\\HECG_040225_CDH5_PANEL 1_250317_231749\\HECG_040225_CDH5_PANEL1_2025-02-04_11-54-59\\PreprocessedData")
-//def outputDir = new File("\\\\imgserver.cnio.es\\IMAGES\\CONFOCAL\\Optical Microscopy\\OUTMACSIMA\\HECG_040225_CDH5_PANEL 1_250317_231749")
+//def inputDir = new File("\\\\imgserver.cnio.es\\IMAGES\\CONFOCAL\\MACSima\\MG\\MG_140125_ABpanel_Run1_250121_231231\\MG_140125_ABpanel_Run1_2025-01-14_12-08-11\\PreprocessedData")
+//def outputDir = new File("\\\\imgserver.cnio.es\\IMAGES\\CONFOCAL\\IA\\OUTPUT_MACSima\\MG_140125_ABpanel_Run1_2025-01-14_12-08-11")
 
 IJ.log("-Parameters selected: ")
 IJ.log("    -input Directory: " + inputDir)
@@ -56,6 +56,8 @@ for (def h = 0; h < listofFiles0.length; h++) {
                             }
                         }
                     }
+                    // IF EMPTY CYCLES: if (!listOfFiles3[k].getName().contains("Scan") && !listOfFiles3[k].getName().contains("Cycle3") && !listOfFiles3[k].getName().contains("Cycle5"))
+                    // IF NOT EMPTY CYCLES: if (!listOfFiles3[k].getName().contains("Scan"))
                     if (!listOfFiles3[k].getName().contains("Scan")) {
                         def listOfFiles4 = listOfFiles3[k].listFiles() // Inside each cycle
                         for (def m = 0; m < listOfFiles4.length; m++) {
