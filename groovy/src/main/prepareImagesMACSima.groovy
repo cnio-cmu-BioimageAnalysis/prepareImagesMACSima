@@ -56,7 +56,7 @@ for (def h = 0; h < listofFiles0.length; h++) {
                             }
                         }
                     }
-                    // IF EMPTY CYCLES: if (!listOfFiles3[k].getName().contains("Scan") && !listOfFiles3[k].getName().contains("Cycle3") && !listOfFiles3[k].getName().contains("Cycle5"))
+                    // IF EMPTY CYCLES. Ex: Cycle3 and 5 are empty: if (!listOfFiles3[k].getName().contains("Scan") && !listOfFiles3[k].getName().contains("Cycle3") && !listOfFiles3[k].getName().contains("Cycle5"))
                     // IF NOT EMPTY CYCLES: if (!listOfFiles3[k].getName().contains("Scan"))
                     if (!listOfFiles3[k].getName().contains("Scan")) {
                         def listOfFiles4 = listOfFiles3[k].listFiles() // Inside each cycle
