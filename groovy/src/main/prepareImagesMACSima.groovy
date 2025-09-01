@@ -16,10 +16,10 @@ import ij.plugin.RGBStackMerge
 
 // INPUT UI
 //
-//#@File(label = "Input File Directory", style = "directory") inputDir
-//#@File(label = "Output File Directory", style = "directory") outputDir
-def inputDir = new File("\\\\imgserver.cnio.es\\IMAGES\\CONFOCAL\\MACSima\\HECG\\HECG_040225_CDH5_PANEL 1_250317_231749\\HECG_040225_CDH5_PANEL1_2025-02-04_11-54-59\\PreprocessedData")
-def outputDir = new File("\\\\imgserver.cnio.es\\IMAGES\\CONFOCAL\\IA\\mcalvo\\test")
+#@File(label = "Input File Directory", style = "directory") inputDir
+#@File(label = "Output File Directory", style = "directory") outputDir
+//def inputDir = new File("\\\\imgserver.cnio.es\\IMAGES\\CONFOCAL\\MACSima\\HECG\\HECG_040225_CDH5_PANEL 1_250317_231749\\HECG_040225_CDH5_PANEL1_2025-02-04_11-54-59\\PreprocessedData")
+//def outputDir = new File("\\\\imgserver.cnio.es\\IMAGES\\CONFOCAL\\IA\\mcalvo\\test")
 
 IJ.log("-Parameters selected: ")
 IJ.log("    -input Directory: " + inputDir)
